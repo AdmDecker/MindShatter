@@ -22,15 +22,15 @@ g++:
 
 ######--Implemented--
 
--i <file\>: Run with input mode set to file and specify the file to run
+-i \<file\>: Run with input mode set to file and specify the file to run
 
--o <file\>: Run with output mode set to file and specify the file to output to
+-o \<file\>: Run with output mode set to file and specify the file to output to
 
 ######--Pending--
 
 -d : Start with dynamic memory allocation for unlimited memory tape
 
--a <bytes\>: Allocate <bytes> amount of memory for the tape to run on. Must be an integer greater than 0.
+-a \<bytes\>: Allocate <bytes> amount of memory for the tape to run on. Must be an integer greater than 0.
 
 -------------------------------------------------------------------------------------------------------------
 
