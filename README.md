@@ -40,9 +40,9 @@ g++:
 
 **+** Increment the value at the pointer by one
 
-\**-** Decrement the value at the pointer by one
+**\-** Decrement the value at the pointer by one
 
-\**>** Move the pointer one unit forward on the tape
+**\>** Move the pointer one unit forward on the tape
 
 **<** Move the pointer one unit back on the tape
 
