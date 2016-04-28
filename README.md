@@ -7,39 +7,41 @@ By default, MindShatter will start in commandline mode for both input and output
 The memory tape used is currently limited to 30,000 bytes and will loop on boundaries.
 
 
+
 -------------------------------------------------------------------------------------------------------------
-Compile Instructions:
+##Compile Instructions:
 
 g++:
     g++ -static main.cpp -o Build/MindShatter.exe
+	
 -------------------------------------------------------------------------------------------------------------
 
 
 -------------------------------------------------------------------------------------------------------------
-Commandline Arguments:
+##Commandline Arguments:
 
---Implemented--
+######--Implemented--
 
--i <file>: Run with input mode set to file and specify the file to run
+-i <file\>: Run with input mode set to file and specify the file to run
 
--o <file>: Run with output mode set to file and specify the file to output to
+-o <file\>: Run with output mode set to file and specify the file to output to
 
---Pending--
+######--Pending--
 
 -d : Start with dynamic memory allocation for unlimited memory tape
 
--a <bytes>: Allocate <bytes> amount of memory for the tape to run on. Must be an integer greater than 0.
+-a <bytes\>: Allocate <bytes> amount of memory for the tape to run on. Must be an integer greater than 0.
 -------------------------------------------------------------------------------------------------------------
 
 
 -------------------------------------------------------------------------------------------------------------
-Supported Brainfuck Operations:
+##Supported Brainfuck Operations:
 
 +: Increment the value at the pointer by one
 
 -: Decrement the value at the pointer by one
 
->: Move the pointer one unit forward on the tape
+\>: Move the pointer one unit forward on the tape
 
 <: Move the pointer one unit back on the tape
 
@@ -54,7 +56,7 @@ Supported Brainfuck Operations:
 
 
 --------------------------------------------------------------------------------------------------------------
-Current issues:
+##Current issues:
 
 -Input from using the input operator ',' is not cleaned, and can cause the program to act sporadically
 
