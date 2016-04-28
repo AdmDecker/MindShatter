@@ -38,21 +38,21 @@ g++:
 -------------------------------------------------------------------------------------------------------------
 ##Supported Brainfuck Operations:
 
-+: Increment the value at the pointer by one
+**+** Increment the value at the pointer by one
 
-\-: Decrement the value at the pointer by one
+\**-** Decrement the value at the pointer by one
 
-\>: Move the pointer one unit forward on the tape
+\**>** Move the pointer one unit forward on the tape
 
-<: Move the pointer one unit back on the tape
+**<** Move the pointer one unit back on the tape
 
-,: Input a value through the commandline
+**,** Input a value through the commandline
 
-.: Output (display) the value at the pointer
+**.** Output (display) the value at the pointer
 
-\[: Start a loop
+**\[** Start a loop
 
-\]: If the value at the pointer is 0, go back to the start of the loop. Otherwise, exit the loop
+**\]** If the value at the pointer is 0, go back to the start of the loop. Otherwise, exit the loop
 
 --------------------------------------------------------------------------------------------------------------
 
