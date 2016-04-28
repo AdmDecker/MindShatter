@@ -19,11 +19,15 @@ g++:
 Commandline Arguments:
 
 --Implemented--
+
 -i <file>: Run with input mode set to file and specify the file to run
+
 -o <file>: Run with output mode set to file and specify the file to output to
 
 --Pending--
+
 -d : Start with dynamic memory allocation for unlimited memory tape
+
 -a <bytes>: Allocate <bytes> amount of memory for the tape to run on. Must be an integer greater than 0.
 -------------------------------------------------------------------------------------------------------------
 
@@ -32,12 +36,19 @@ Commandline Arguments:
 Supported Brainfuck Operations:
 
 +: Increment the value at the pointer by one
+
 -: Decrement the value at the pointer by one
+
 >: Move the pointer one unit forward on the tape
+
 <: Move the pointer one unit back on the tape
+
 ,: Input a value through the commandline
+
 .: Output (display) the value at the pointer
+
 [: Start a loop
+
 ]: If the value at the pointer is 0, go back to the start of the loop. Otherwise, exit the loop
 --------------------------------------------------------------------------------------------------------------
 
@@ -46,6 +57,8 @@ Supported Brainfuck Operations:
 Current issues:
 
 -Input from using the input operator ',' is not cleaned, and can cause the program to act sporadically
+
  if it is not proper.
+ 
 -Executable could be made smaller if dependencies to std::vector and std::string were removed
 --------------------------------------------------------------------------------------------------------------
