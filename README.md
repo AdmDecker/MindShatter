@@ -1,4 +1,4 @@
-Please report any bugs or issues to Adam Decker
+**Please report any bugs or issues to Adam Decker**
 
 MindShatter is a free, all-purpose Brainfuck interpreter.
 It supports both file and commandline input and output.
@@ -31,6 +31,7 @@ g++:
 -d : Start with dynamic memory allocation for unlimited memory tape
 
 -a <bytes\>: Allocate <bytes> amount of memory for the tape to run on. Must be an integer greater than 0.
+
 -------------------------------------------------------------------------------------------------------------
 
 
@@ -39,7 +40,7 @@ g++:
 
 +: Increment the value at the pointer by one
 
--: Decrement the value at the pointer by one
+\-: Decrement the value at the pointer by one
 
 \>: Move the pointer one unit forward on the tape
 
@@ -49,9 +50,10 @@ g++:
 
 .: Output (display) the value at the pointer
 
-[: Start a loop
+\[: Start a loop
 
-]: If the value at the pointer is 0, go back to the start of the loop. Otherwise, exit the loop
+\]: If the value at the pointer is 0, go back to the start of the loop. Otherwise, exit the loop
+
 --------------------------------------------------------------------------------------------------------------
 
 
@@ -63,4 +65,5 @@ g++:
  if it is not proper.
  
 -Executable could be made smaller if dependencies to std::vector and std::string were removed
+
 --------------------------------------------------------------------------------------------------------------
