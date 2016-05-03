@@ -63,7 +63,7 @@ int main(int argc, char *argv[])
 	if (!process_cl_args(argc, argv, infile, outfile, &input, &output))
 		return 1;
 
-	printf( "MindShatter v1.0", "%s");
+	printf( "MindShatter v1.0\n", "%s");
 	//Initialize brainfuck array
 
 	bool dead = false;
@@ -75,7 +75,7 @@ int main(int argc, char *argv[])
 	{
 		if (input == commandline)
 		{
-			printf("\n>>>", "%s");
+			printf(">>>", "%s");
 			scanf("%s", line);
 			if(preprocess_line(line, lineNumber))
 				process_line(line);
@@ -269,6 +269,7 @@ bool output_byte()
 	if (output == commandline)
 	{
 		printf( str );
+		printf("\n");
 	}
 
 	else
