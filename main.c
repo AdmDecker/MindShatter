@@ -6,15 +6,18 @@ Version 1.1.0
 */
 
 #define _CRT_SECURE_NO_WARNINGS
+#define bool int
+#define true 1
+#define false 0
+#define mode int
+#define file 0
+#define commandline 1
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 
-using namespace std;
-enum mode{file, commandline};
 
-
-bool end_loop(int &i);
+bool end_loop(int *i);
 bool process_line(char line[]);
 bool increment_ptr();
 bool decrement_ptr();
@@ -22,9 +25,9 @@ bool increment_val();
 bool decrement_val();
 bool output_byte();
 bool input_byte();
-bool start_loop(int &i);
-bool end_loop(int &i);
-bool process_cl_args(int argc, char *argv[], char infile[], char outfile[], mode &input, mode &output);
+bool start_loop(int *i);
+bool end_loop(int *i);
+bool process_cl_args(int argc, char *argv[], char infile[], char outfile[], mode *input, mode *output);
 bool preprocess_line(char line[], int lineNumber);
 
 
@@ -57,7 +60,7 @@ int main(int argc, char *argv[])
 	char infile[80] = "\0";
 	char outfile[80] = "\0";
 
-	if (!process_cl_args(argc, argv, infile, outfile, input, output))
+	if (!process_cl_args(argc, argv, infile, outfile, &input, &output))
 		return 1;
 
 	printf( "MindShatter v1.0", "%s");
@@ -102,7 +105,7 @@ int main(int argc, char *argv[])
 }
 
 
-bool process_cl_args(int argc, char *argv[], char infile[], char outfile[], mode &input, mode &output)
+bool process_cl_args(int argc, char *argv[], char infile[], char outfile[], mode *input, mode *output)
 {
 	for (int i = 1; i < argc; ++i)
 	{
@@ -172,11 +175,11 @@ bool process_line(char line[])
 				return false;
 			break;
 		case '[':
-			if(!start_loop(i))
+			if(!start_loop(&i))
 				return false;
 			break;
 		case ']':
-			if (!end_loop(i))
+			if (!end_loop(&i))
 				return false;
 			break;
 		default:
@@ -261,16 +264,17 @@ bool decrement_val()
 
 bool output_byte()
 {
+	char str[2] = "\0";
+	str[0] = (char)data[ptr];
 	if (output == commandline)
 	{
-		char str[2] = "\0";
-		str[0] = char(data[ptr]);
 		printf( str );
 	}
 
 	else
 	{ 
-		fprintf(fout, "%s", char(data[ptr]));
+
+		fprintf(fout, "%s", str);
 	}
 	return true;
 }
@@ -289,9 +293,9 @@ bool input_byte()
 	return true;
 }
 
-bool start_loop(int &i)
+bool start_loop(int *i)
 {
-	int j = i;
+	int j = *i;
 
 	//Make sure there's space on the stack
 	if (!(stack_iterator < stack_size))
@@ -303,18 +307,18 @@ bool start_loop(int &i)
 	}
 
 	//Add it to the stack and increment stack iterator
-	loop_stack[stack_iterator] = i;
+	loop_stack[stack_iterator] = *i;
 	stack_iterator++;
 
 	return true;
 }
 
-bool end_loop(int &i)
+bool end_loop(int *i)
 {
 	if (data[ptr] == '\0')
 		stack_iterator--;
 	else
-		i = loop_stack[stack_iterator - 1];
+		*i = loop_stack[stack_iterator - 1];
 	return true;
 }
 
